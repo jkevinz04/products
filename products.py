@@ -13,4 +13,8 @@ while True:
     products.append([name, price]) #list comprehension
 print(products)
 
-print(products[0][0]) #存取大清單第 0 位置中的小清單第 0 位置
+#依序存取大清單中的小清單
+for p in products:
+    print (p[0], '的價格是', p[1]) #依序印出小清單的第 0 位置及第 1 位置
+    
+#print(products[0][0]) #存取大清單第 0 位置中的小清單第 0 位置
