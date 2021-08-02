@@ -21,7 +21,8 @@ for p in products:
     
 #print(products[0][0]) #存取大清單第 0 位置中的小清單第 0 位置
 
-with open(file, 'w') as f:
+with open(file, 'w') as f: #encoding='utf-8' 如需解決亂碼問題則在'w'後最後加入
+    f.write('商品,價格\n')
     for p in products:
         f.write(p[0] + ',' + str(p[1]) + '\n') #將清單內資料寫入檔案，如沒有檔案則自動產生
     
