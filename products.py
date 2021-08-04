@@ -1,17 +1,22 @@
 #二維清單
-file = 'products.csv' #建議以 csv 檔案
+import os #operating system
+
 products = [] #大清單
-
-#讀取檔案
-with open(file, 'r') as f:
-    for line in f:
-        if '商品,價格' in line: #跳過存取標題
-            continue #跳過此回進入下一回
-        #name, price = line.strip().split(',')
-        #products.append([name, price])
-        products.append(line.strip().split(',')) #list comprehension
-print(products)
-
+file = 'products.csv' #建議以 csv 檔案
+if os.path.isfile('products.csv'): #檢查檔案在不在 #相對路徑，同一階層
+    print('檔案存在')
+    #讀取檔案
+    with open(file, 'r') as f:
+        for line in f:
+            if '商品,價格' in line: #跳過存取標題
+                continue #跳過此回進入下一回
+            #name, price = line.strip().split(',')
+            #products.append([name, price])
+            products.append(line.strip().split(',')) #list comprehension
+    print(products)
+else:
+    print('檔案不存在')
+    
 #讓使用者輸入
 while True:
     name = input('請輸入商品名稱： ')
